@@ -5,10 +5,12 @@ namespace Xajax\Pgw;
 class Modal extends \Xajax\Plugin\Response
 {
 	protected $aOptions;
+	protected $bInclude;
 
 	public function __construct()
 	{
 		$this->aOptions = array();
+		$this->bInclude = true;
 	}
 
 	public function getName()
@@ -22,6 +24,11 @@ class Modal extends \Xajax\Plugin\Response
 		return '0.1.0';
 	}
 
+	public function setInclude($bInclude)
+	{
+		$this->bInclude = ($bInclude);
+	}
+
 	public function setOption($name, $value)
 	{
 		$this->aOptions[$name] = $value;
@@ -31,6 +38,18 @@ class Modal extends \Xajax\Plugin\Response
 	{
 		$this->aOptions = array_merge($this->aOptions, $aOptions);
 	}
+
+	public function getJsInclude()
+ 	{
+ 		return (!$this->bInclude ? '' :
+ 			'<script type="text/javascript" src="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>');
+ 	}
+
+ 	public function getCssInclude()
+ 	{
+ 		return (!$this->bInclude ? '' :
+ 			'<link href="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">');
+ 	}
 
 	public function getClientScript()
 	{
