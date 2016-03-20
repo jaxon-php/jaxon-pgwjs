@@ -35,8 +35,9 @@ class Modal extends \Xajax\Plugin\Response
 	public function getClientScript()
 	{
 		$sScript = '
-xajax.command.handler.register("pgwmodal", function(args) {
-	$.pgwModal({';
+jQuery(document).ready(function($){
+	xajax.command.handler.register("pgwModal", function(args) {
+		var options = {';
 		foreach($this->aOptions as $name => $value)
 		{
 			if(is_string($value))
@@ -52,18 +53,27 @@ xajax.command.handler.register("pgwmodal", function(args) {
 				$value = print_r($value, true);
 			}
 			$sScript .= '
-	    ' . $name . ': ' . $value . ',';
+			' . $name . ': ' . $value . ',';
 		}
 		return $sScript . '
-	    title: args.data.title,
-		content: args.data.content
+			title: args.data.title,
+			content: args.data.content
+		};
+		// Override defaults options with call options
+		jQuery.extend(options, args.data.options);
+		$.pgwModal(options);
 	});
 });
 ';
 	}
 
-	public function show($title, $content, $buttons = array(), array $aOptions = array())
+	public function show($title, $content, $buttons, array $aOptions = array())
 	{
+		// Set the value of the max width, if there is no value defined
+		if(!array_key_exists('maxWidth', $this->aOptions) && !array_key_exists('maxWidth', $aOptions))
+		{
+			$aOptions['maxWidth'] = 600;
+		}
 		// Buttons
 		$modalButtons = '
 ';
@@ -85,11 +95,11 @@ xajax.command.handler.register("pgwmodal", function(args) {
 		<div class="modal-body">
 ' . $content . '
 		</div>
-		<div class="modal-footer">' . $modalButtons . '
+		<div class="modal-footer" style="padding:10px 5px 5px;">' . $modalButtons . '
 		</div>
 ';
 		// Affectations du contenu de la fenêtre
-		$this->addCommand(array('cmd'=>'pgwmodal'), array('title' => $title, 'content' => $modalHtml, 'options' => $aOptions));
+		$this->addCommand(array('cmd'=>'pgwModal'), array('title' => $title, 'content' => $modalHtml, 'options' => $aOptions));
 	}
 
 	public function hide()
