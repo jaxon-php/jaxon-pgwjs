@@ -4,7 +4,7 @@ Responsive modal dialog for Xajax
 
 #### Installation
 
-Run `composer require lagdo/xajax-pgwjs`, or add `"lagdo/xajax-pgwjs": : "dev-master"` in your composer.json.
+Run `composer require lagdo/xajax-pgwjs`, or add `"lagdo/xajax-pgwjs": "dev-master"` in your composer.json.
 
 Add JQuery in the HTML header.
 
