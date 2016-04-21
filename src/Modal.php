@@ -54,9 +54,8 @@ class Modal extends \Xajax\Plugin\Response
 	public function getClientScript()
 	{
 		$sScript = '
-jQuery(document).ready(function($){
-	xajax.command.handler.register("pgwModal", function(args) {
-		var options = {';
+xajax.command.handler.register("pgwModal", function(args) {
+	var options = {';
 		foreach($this->aOptions as $name => $value)
 		{
 			if(is_string($value))
@@ -72,18 +71,16 @@ jQuery(document).ready(function($){
 				$value = print_r($value, true);
 			}
 			$sScript .= '
-			' . $name . ': ' . $value . ',';
+		' . $name . ': ' . $value . ',';
 		}
 		return $sScript . '
-			title: args.data.title,
-			content: args.data.content
-		};
-		// Override defaults options with call options
-		jQuery.extend(options, args.data.options);
-		$.pgwModal(options);
-	});
-});
-';
+		title: args.data.title,
+		content: args.data.content
+	};
+	// Override defaults options with call options
+	jQuery.extend(options, args.data.options);
+	$.pgwModal(options);
+});';
 	}
 
 	public function show($title, $content, $buttons, array $aOptions = array())
