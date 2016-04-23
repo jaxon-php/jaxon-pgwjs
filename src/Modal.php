@@ -4,14 +4,10 @@ namespace Xajax\Pgw;
 
 class Modal extends \Xajax\Plugin\Response
 {
-	protected $aOptions;
-	protected $bInclude;
+	use \Xajax\Utils\ContainerTrait;
 
 	public function __construct()
-	{
-		$this->aOptions = array();
-		$this->bInclude = true;
-	}
+	{}
 
 	public function getName()
 	{
@@ -24,40 +20,36 @@ class Modal extends \Xajax\Plugin\Response
 		return '0.1.0';
 	}
 
-	public function setInclude($bInclude)
-	{
-		$this->bInclude = ($bInclude);
-	}
-
-	public function setOption($name, $value)
-	{
-		$this->aOptions[$name] = $value;
-	}
-
-	public function setOptions(array $aOptions)
-	{
-		$this->aOptions = array_merge($this->aOptions, $aOptions);
-	}
-
 	public function getJsInclude()
  	{
- 		return (!$this->bInclude ? '' :
+		if(!$this->hasOption('pgw.assets.include'))
+		{
+			$this->setOption('pgw.assets.include', true);
+		}
+ 		return (!$this->getOption('pgw.assets.include') ? '' :
  			'<script type="text/javascript" src="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>');
  	}
 
  	public function getCssInclude()
  	{
- 		return (!$this->bInclude ? '' :
+		if(!$this->hasOption('pgw.assets.include'))
+		{
+			$this->setOption('pgw.assets.include', true);
+		}
+ 		return (!$this->getOption('pgw.assets.include') ? '' :
  			'<link href="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">');
  	}
 
 	public function getClientScript()
 	{
+		$sPrefix = 'pgw.modal.options.';
+		$aOptions = $this->getOptionNames($sPrefix);
 		$sScript = '
 xajax.command.handler.register("pgwModal", function(args) {
 	var options = {';
-		foreach($this->aOptions as $name => $value)
+		foreach($aOptions as $sname => $name)
 		{
+			$value = $this->getOption($name);
 			if(is_string($value))
 			{
 				$value = "'$value'";
@@ -71,7 +63,7 @@ xajax.command.handler.register("pgwModal", function(args) {
 				$value = print_r($value, true);
 			}
 			$sScript .= '
-		' . $name . ': ' . $value . ',';
+		' . $sname . ': ' . $value . ',';
 		}
 		return $sScript . '
 		title: args.data.title,
