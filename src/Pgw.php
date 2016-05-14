@@ -2,7 +2,7 @@
 
 namespace Xajax\Pgw;
 
-class Modal extends \Xajax\Plugin\Response
+class Pgw extends \Xajax\Plugin\Response
 {
 	use \Xajax\Utils\ContainerTrait;
 
@@ -75,7 +75,7 @@ xajax.command.handler.register("pgwModal", function(args) {
 });';
 	}
 
-	public function show($title, $content, $buttons, array $aOptions = array())
+	public function modal($title, $content, $buttons, array $aOptions = array())
 	{
 		// Set the value of the max width, if there is no value defined
 		if(!array_key_exists('maxWidth', $aOptions))
