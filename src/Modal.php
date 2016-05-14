@@ -20,7 +20,7 @@ class Modal extends \Xajax\Plugin\Response
 		return '0.1.0';
 	}
 
-	public function getJsInclude()
+	public function getJs()
  	{
 		if(!$this->hasOption('pgw.assets.include'))
 		{
@@ -30,7 +30,7 @@ class Modal extends \Xajax\Plugin\Response
  			'<script type="text/javascript" src="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>');
  	}
 
- 	public function getCssInclude()
+ 	public function getCss()
  	{
 		if(!$this->hasOption('pgw.assets.include'))
 		{
@@ -40,7 +40,7 @@ class Modal extends \Xajax\Plugin\Response
  			'<link href="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">');
  	}
 
-	public function getClientScript()
+	public function getScript()
 	{
 		$sPrefix = 'pgw.modal.options.';
 		$aOptions = $this->getOptionNames($sPrefix);
