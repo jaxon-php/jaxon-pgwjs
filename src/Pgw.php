@@ -22,22 +22,20 @@ class Pgw extends \Xajax\Plugin\Response
 
 	public function getJs()
  	{
-		if(!$this->hasOption('pgw.assets.include'))
+ 		if(!$this->getOption('assets.include.all') && !$this->getOption('assets.include.pgw'))
 		{
-			$this->setOption('pgw.assets.include', true);
+			return '';
 		}
- 		return (!$this->getOption('pgw.assets.include') ? '' :
- 			'<script type="text/javascript" src="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>');
+ 		return '<script type="text/javascript" src="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>';
  	}
 
  	public function getCss()
  	{
-		if(!$this->hasOption('pgw.assets.include'))
+ 		if(!$this->getOption('assets.include.all') && !$this->getOption('assets.include.pgw'))
 		{
-			$this->setOption('pgw.assets.include', true);
+			return '';
 		}
- 		return (!$this->getOption('pgw.assets.include') ? '' :
- 			'<link href="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">');
+ 		return '<link href="//assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">';
  	}
 
 	public function getScript()
