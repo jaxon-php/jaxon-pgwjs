@@ -11,7 +11,7 @@ class Modal extends \Xajax\Plugin\Response
 
 	public function getName()
 	{
-		return 'pgwModal';
+		return 'pgw';
 	}
 
 	public function generateHash()
