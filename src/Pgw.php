@@ -22,7 +22,7 @@ class Pgw extends \Xajax\Plugin\Response
 
 	public function getJs()
  	{
- 		if(!$this->getOption('assets.include.all') && !$this->getOption('assets.include.pgw'))
+ 		if(!$this->includeAssets())
 		{
 			return '';
 		}
@@ -31,7 +31,7 @@ class Pgw extends \Xajax\Plugin\Response
 
  	public function getCss()
  	{
- 		if(!$this->getOption('assets.include.all') && !$this->getOption('assets.include.pgw'))
+ 		if(!$this->includeAssets())
 		{
 			return '';
 		}
