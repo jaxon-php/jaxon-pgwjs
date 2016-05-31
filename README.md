@@ -42,7 +42,7 @@ Usage
 -----
 
 This example shows how to display a modal dialog.
-```
+```php
 function myFunction()
 {
     $response = new \Xajax\Response\Response();
@@ -60,7 +60,7 @@ function myFunction()
 ```
 
 The `pgw` attribute of Xajax response provides the following functions.
-```
+```php
 public function modal($title, $content, $buttons, array $aOptions = array());   // Show a modal dialog
 public function hide();                                                         // Hide the modal dialog
 ```
