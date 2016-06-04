@@ -1,10 +1,10 @@
 <?php
 
-namespace Xajax\Pgw;
+namespace Jaxon\Pgw;
 
-class Pgw extends \Xajax\Plugin\Response
+class Pgw extends \Jaxon\Plugin\Response
 {
-    use \Xajax\Utils\ContainerTrait;
+    use \Jaxon\Utils\ContainerTrait;
 
     public function __construct()
     {}
@@ -43,7 +43,7 @@ class Pgw extends \Xajax\Plugin\Response
         $sPrefix = 'pgw.modal.options.';
         $aOptions = $this->getOptionNames($sPrefix);
         $sScript = '
-xajax.command.handler.register("pgwModal", function(args) {
+jaxon.command.handler.register("pgwModal", function(args) {
     var options = {';
         foreach($aOptions as $sname => $name)
         {

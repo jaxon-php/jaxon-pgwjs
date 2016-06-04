@@ -1,13 +1,13 @@
-Modal Dialog for Xajax with PgwJs
+Modal Dialog for Jaxon with PgwJs
 =================================
 
-This package implements responsive modal dialog in Xajax applications using the PgwJS library.
+This package implements responsive modal dialog in Jaxon applications using the PgwJS library.
 http://pgwjs.com.
 
 Features
 --------
 
-- Enrich the Xajax response with functions to show and hide dialogs.
+- Enrich the Jaxon response with functions to show and hide dialogs.
 - Automatically insert the Js and CSS files of the PgwJs library into the HTML page.
 
 Installation
@@ -16,26 +16,26 @@ Installation
 Add the following line in the `composer.json` file.
 ```json
 "require": {
-    "lagdo/xajax-pgwjs": "dev-master"
+    "lagdo/jaxon-pgwjs": "dev-master"
 }
 ```
 
 Or run the command
 ```bash
-composer require lagdo/xajax-pgwjs
+composer require lagdo/jaxon-pgwjs
 ```
 
 Configuration
 ------------
 
-By default the plugin loads the version 2.0.0 of Js and CSS files from the Xajax website.
+By default the plugin loads the version 2.0.0 of Js and CSS files from the Jaxon website.
 
 - assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js
 - assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css
 
 This can be disabled by setting the `assets.include.pgw` option to `false`.
 
-The options of the PgwModal plugin can be set under the `pgw.modal.options.` section of the Xajax configuration.
+The options of the PgwModal plugin can be set under the `pgw.modal.options.` section of the Jaxon configuration.
 See [here](http://pgwjs.com/pgwmodal/) for the full list of options.
 
 Usage
@@ -45,7 +45,7 @@ This example shows how to display a modal dialog.
 ```php
 function myFunction()
 {
-    $response = new \Xajax\Response\Response();
+    $response = new \Jaxon\Response\Response();
 
     // Process the request
     // ...
@@ -59,7 +59,7 @@ function myFunction()
 }
 ```
 
-The `pgw` attribute of Xajax response provides the following functions.
+The `pgw` attribute of Jaxon response provides the following functions.
 ```php
 public function modal($title, $content, $buttons, array $aOptions = array());   // Show a modal dialog
 public function hide();                                                         // Hide the modal dialog
@@ -68,8 +68,8 @@ public function hide();                                                         
 Contribute
 ----------
 
-- Issue Tracker: github.com/lagdo/xajax-pgwjs/issues
-- Source Code: github.com/lagdo/xajax-pgwjs
+- Issue Tracker: github.com/lagdo/jaxon-pgwjs/issues
+- Source Code: github.com/lagdo/jaxon-pgwjs
 
 License
 -------
