@@ -43,7 +43,7 @@ class Pgw extends \Jaxon\Plugin\Response
         $sPrefix = 'pgw.modal.options.';
         $aOptions = $this->getOptionNames($sPrefix);
         $sScript = '
-jaxon.command.handler.register("pgwModal", function(args) {
+xajax.command.handler.register("pgwModal", function(args) {
     var options = {';
         foreach($aOptions as $sname => $name)
         {
