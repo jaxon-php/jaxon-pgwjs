@@ -16,13 +16,13 @@ Installation
 Add the following line in the `composer.json` file.
 ```json
 "require": {
-    "lagdo/jaxon-pgwjs": "dev-master"
+    "jaxon-php/jaxon-pgwjs": "dev-master"
 }
 ```
 
 Or run the command
 ```bash
-composer require lagdo/jaxon-pgwjs
+composer require jaxon-php/jaxon-pgwjs
 ```
 
 Configuration
@@ -30,8 +30,8 @@ Configuration
 
 By default the plugin loads the version 2.0.0 of Js and CSS files from the Jaxon website.
 
-- assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.js
-- assets.lagdo-software.net/libs/pgwjs/modal/2.0.0/pgwmodal.min.css
+- packages.jaxon-php.org/libs/pgwjs/modal/2.0.0/pgwmodal.min.js
+- packages.jaxon-php.org/libs/pgwjs/modal/2.0.0/pgwmodal.min.css
 
 This can be disabled by setting the `assets.include.pgw` option to `false`.
 
@@ -68,8 +68,8 @@ public function hide();                                                         
 Contribute
 ----------
 
-- Issue Tracker: github.com/lagdo/jaxon-pgwjs/issues
-- Source Code: github.com/lagdo/jaxon-pgwjs
+- Issue Tracker: github.com/jaxon-php/jaxon-pgwjs/issues
+- Source Code: github.com/jaxon-php/jaxon-pgwjs
 
 License
 -------

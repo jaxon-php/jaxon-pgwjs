@@ -1,19 +1,19 @@
 {
-    "name": "lagdo/jaxon-pgwjs",
+    "name": "jaxon-php/jaxon-pgwjs",
     "type": "library",
     "description": "Responsive modal dialog for Jaxon with the PgwJS library.",
     "authors": [
         {"name": "Thierry Feuzeu"}
     ],
-    "homepage": "https://github.com/lagdo/jaxon-pgwjs",
+    "homepage": "https://github.com/jaxon-php/jaxon-pgwjs",
     "license": "BSD-2-Clause",
     "keywords": ["Jaxon", "Xajax", "Ajax", "PHP", "Javascript", "PgwJS", "Dialog", "Modal"],
     "support": {
-        "issues": "https://github.com/lagdo/jaxon-pgwjs/issues",
-        "source": "https://github.com/lagdo/jaxon-pgwjs"
+        "issues": "https://github.com/jaxon-php/jaxon-pgwjs/issues",
+        "source": "https://github.com/jaxon-php/jaxon-pgwjs"
     },
     "require": {
-        "lagdo/jaxon-core": "dev-master"
+        "jaxon-php/jaxon-core": "dev-master"
     },
     "autoload": {
         "psr-4": {
