@@ -26,7 +26,7 @@ class Pgw extends \Jaxon\Plugin\Response
         {
             return '';
         }
-         return '<script type="text/javascript" src="//packages.jaxon-php.org/libs/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>';
+         return '<script type="text/javascript" src="//lib.jaxon-php.org/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>';
      }
 
      public function getCss()
@@ -35,7 +35,7 @@ class Pgw extends \Jaxon\Plugin\Response
         {
             return '';
         }
-         return '<link href="//packages.jaxon-php.org/libs/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">';
+         return '<link href="//lib.jaxon-php.org/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">';
      }
 
     public function getScript()

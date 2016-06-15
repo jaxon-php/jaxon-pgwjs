@@ -30,8 +30,8 @@ Configuration
 
 By default the plugin loads the version 2.0.0 of Js and CSS files from the Jaxon website.
 
-- packages.jaxon-php.org/libs/pgwjs/modal/2.0.0/pgwmodal.min.js
-- packages.jaxon-php.org/libs/pgwjs/modal/2.0.0/pgwmodal.min.css
+- lib.jaxon-php.org/pgwjs/modal/2.0.0/pgwmodal.min.js
+- lib.jaxon-php.org/pgwjs/modal/2.0.0/pgwmodal.min.css
 
 This can be disabled by setting the `assets.include.pgw` option to `false`.
 
