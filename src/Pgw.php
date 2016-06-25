@@ -23,18 +23,18 @@ class Pgw extends \Jaxon\Plugin\Response
     public function getJs()
      {
          if(!$this->includeAssets())
-        {
-            return '';
-        }
+         {
+             return '';
+         }
          return '<script type="text/javascript" src="//lib.jaxon-php.org/pgwjs/modal/2.0.0/pgwmodal.min.js"></script>';
      }
 
      public function getCss()
      {
          if(!$this->includeAssets())
-        {
-            return '';
-        }
+         {
+             return '';
+         }
          return '<link href="//lib.jaxon-php.org/pgwjs/modal/2.0.0/pgwmodal.min.css" rel="stylesheet" type="text/css">';
      }
 
