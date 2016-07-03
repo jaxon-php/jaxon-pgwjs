@@ -2,7 +2,7 @@
 
 namespace Jaxon\Pgw;
 
-class Pgw extends \Jaxon\Plugin\Response
+class Plugin extends \Jaxon\Plugin\Response
 {
     use \Jaxon\Utils\ContainerTrait;
 
@@ -17,7 +17,7 @@ class Pgw extends \Jaxon\Plugin\Response
     public function generateHash()
     {
         // Use the version number as hash
-        return '0.1.0';
+        return '1.0.0';
     }
 
     public function getJs()
