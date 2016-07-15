@@ -16,7 +16,7 @@ Installation
 Add the following line in the `composer.json` file.
 ```json
 "require": {
-    "jaxon-php/jaxon-pgwjs": "dev-master"
+    "jaxon-php/jaxon-pgwjs": "1.0.*"
 }
 ```
 
